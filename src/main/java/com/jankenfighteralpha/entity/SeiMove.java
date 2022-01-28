@@ -13,8 +13,10 @@ public class SeiMove {
 	// Class Variables
 	@Id
 	@Column(name="s_move_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String sMoveId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int sMoveId;
+	@Column(name="s_move")
+	private String sMove;
 	@Column(name="s_move_key")
 	private String sMoveKey;
 	@Column(name="move_name")
@@ -30,16 +32,22 @@ public class SeiMove {
 		
 	}
 	// Getters and Setters
-	public String getMoveId() {
+	public int getsMoveId() {
 		return sMoveId;
 	}
-	public void setMoveId(String sMoveId) {
+	public void setsMoveId(int sMoveId) {
 		this.sMoveId = sMoveId;
 	}
-	public String getMoveKey() {
+	public String getsMove() {
+		return sMove;
+	}
+	public void setsMove(String sMove) {
+		this.sMove = sMove;
+	}
+	public String getsMoveKey() {
 		return sMoveKey;
 	}
-	public void setMoveKey(String sMoveKey) {
+	public void setsMoveKey(String sMoveKey) {
 		this.sMoveKey = sMoveKey;
 	}
 	public String getMoveName() {
@@ -66,7 +74,11 @@ public class SeiMove {
 	public void setMoveBuff(float moveBuff) {
 		this.moveBuff = moveBuff;
 	}
+	@Override
 	public String toString() {
 		return "";
+	}
+	public int toIDString() {
+		return sMoveId;
 	}
 }

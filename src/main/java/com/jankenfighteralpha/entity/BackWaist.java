@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="waist")
-public class Waist {
+@Table(name="back_waist")
+public class BackWaist {
 	// Class Variables
 	@Id
-	@Column(name="waist_id")
+	@Column(name="back_waist_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int waistId;
-	@Column(name="waist")
-	private String waist;
+	private int backWaistId;
+	@Column(name="back_waist")
+	private String backWaist;
 	@Column(name="waist_name")
 	private String waistName;
 	@Column(name="waist_desc")
@@ -24,21 +24,21 @@ public class Waist {
 	@Column(name="waist_image_file")
 	private String waistImageFile;
 	// Basic Constructor
-	public Waist() {
+	public BackWaist() {
 		
 	}
 	// Getters and Setters
-	public int getWaistId() {
-		return waistId;
+	public int getBackWaistId() {
+		return backWaistId;
 	}
-	public void setWaistId(int waistId) {
-		this.waistId = waistId;
+	public void setBackWaistId(int backWaistId) {
+		this.backWaistId = backWaistId;
 	}
-	public String getWaist() {
-		return waist;
+	public String getBackWaist() {
+		return backWaist;
 	}
-	public void setWaist(String waist) {
-		this.waist = waist;
+	public void setWaist(String backWaist) {
+		this.backWaist = backWaist;
 	}
 	public String getWaistName() {
 		return waistName;
@@ -59,6 +59,6 @@ public class Waist {
 		this.waistImageFile = waistImageFile;
 	}
 	public String toString() {
-		return "Waist " + waistId + ": " + waistName + ", " + waistDesc + ", Image File: " + waistImageFile;
+		return "Waist " + backWaist;
 	}
 }

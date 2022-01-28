@@ -13,8 +13,10 @@ public class SurpriseMove {
 	// Class Variables
 	@Id
 	@Column(name="p_move_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String pMoveId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int pMoveId;
+	@Column(name="p_move")
+	private String pMove;
 	@Column(name="p_move_key")
 	private String pMoveKey;
 	@Column(name="move_name")
@@ -30,16 +32,22 @@ public class SurpriseMove {
 		
 	}
 	// Getters and Setters
-	public String getMoveId() {
+	public int getpMoveId() {
 		return pMoveId;
 	}
-	public void setMoveId(String pMoveId) {
+	public void setpMoveId(int pMoveId) {
 		this.pMoveId = pMoveId;
 	}
-	public String getMoveKey() {
+	public String getpMove() {
+		return pMove;
+	}
+	public void setpMove(String pMove) {
+		this.pMove = pMove;
+	}
+	public String getpMoveKey() {
 		return pMoveKey;
 	}
-	public void setMoveKey(String pMoveKey) {
+	public void setpMoveKey(String pMoveKey) {
 		this.pMoveKey = pMoveKey;
 	}
 	public String getMoveName() {
@@ -68,5 +76,8 @@ public class SurpriseMove {
 	}
 	public String toString() {
 		return "";
+	}
+	public int toIDString() {
+		return pMoveId;
 	}
 }

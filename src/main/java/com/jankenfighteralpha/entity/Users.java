@@ -33,6 +33,7 @@ public class Users {
 	private String email;
 	@Column(name="user_password")
 	private String password;
+	
 	// Basic Constructor
 	public Users() {
 		

@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="arms")
-public class Arms {
+@Table(name="back_arms")
+public class BackArms {
 	// Class Variables
 	@Id
-	@Column(name="arms_id")
+	@Column(name="back_arms_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int armsId;
-	@Column(name="arms")
-	private String arms;
+	private int backArmsId;
+	@Column(name="back_arms")
+	private String backArms;
 	@Column(name="arms_name")
 	private String armsName;
 	@Column(name="arms_desc")
@@ -24,20 +24,20 @@ public class Arms {
 	@Column(name="arms_image_file")
 	private String armsImageFile;
 	// Basic Constructor
-	public Arms() {
+	public BackArms() {
 		
 	}
-	public int getArmsId() {
-		return armsId;
+	public int getBackArmsId() {
+		return backArmsId;
 	}
-	public void setArmsId(int armsId) {
-		this.armsId = armsId;
+	public void setBackArmsId(int backArmsId) {
+		this.backArmsId = backArmsId;
 	}
-	public String getArms() {
-		return arms;
+	public String getBackArms() {
+		return backArms;
 	}
-	public void setArms(String arms) {
-		this.arms = arms;
+	public void setBackArms(String backArms) {
+		this.backArms = backArms;
 	}
 	public String getArmsName() {
 		return armsName;
@@ -59,6 +59,6 @@ public class Arms {
 	}
 	@Override
 	public String toString() {
-		return "Arms " + armsId + ": " + armsName + ", " + armsDesc + ", Image File: " + armsImageFile;
+		return "Arms " + backArms;
 	}
 }

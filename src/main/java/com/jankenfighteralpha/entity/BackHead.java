@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="head")
-public class Head {
+@Table(name="back_head")
+public class BackHead {
 	// Class Variables
 	@Id
-	@Column(name="head_id")
+	@Column(name="back_head_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public int headId;
-	@Column(name="head")
-	public String head;
+	public int backHeadId;
+	@Column(name="back_head")
+	public String backHead;
 	@Column(name="head_name")
 	public String headName;
 	@Column(name="head_desc")
@@ -24,21 +24,21 @@ public class Head {
 	@Column(name="head_image_file")
 	private String headImageFile;
 	// Basic Constructor
-	public Head() {
+	public BackHead() {
 		
 	}
 	// Getters and Setters
-	public int getHeadId() {
-		return headId;
+	public int getBackHeadId() {
+		return backHeadId;
 	}
-	public void setHeadId(int headId) {
-		this.headId = headId;
+	public void setBackHeadId(int backHeadId) {
+		this.backHeadId = backHeadId;
 	}
-	public String getHead() {
-		return head;
+	public String getBackHead() {
+		return backHead;
 	}
-	public void setHeadId(String head) {
-		this.head = head;
+	public void setBackHead(String backHead) {
+		this.backHead = backHead;
 	}
 	public String getHeadName() {
 		return headName;
@@ -60,6 +60,6 @@ public class Head {
 	}
 	@Override
 	public String toString() {
-		return "Head " + headId + ": " + headName + ", " + headDesc + ", Image File: " + headImageFile;
+		return "Head " + backHead;
 	}
 }

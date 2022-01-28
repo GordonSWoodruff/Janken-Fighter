@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="legs")
-public class Legs {
+@Table(name="back_legs")
+public class BackLegs {
 	// Class Variables
 	@Id
-	@Column(name="legs_id")
+	@Column(name="back_legs_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int legsId;
-	@Column(name="legs")
-	private String legs;
+	private int backLegsId;
+	@Column(name="back_legs")
+	private String backLegs;
 	@Column(name="legs_name")
 	private String legsName;
 	@Column(name="legs_desc")
@@ -24,21 +24,21 @@ public class Legs {
 	@Column(name="Legs_image_file")
 	private String legsImageFile;
 	// Basic Constructor
-	public Legs() {
+	public BackLegs() {
 		
 	}
-	//Getters and Setters
-	public int getLegsId() {
-		return legsId;
+	// Getters and Setters
+	public int getBackLegsId() {
+		return backLegsId;
 	}
-	public void setLegsId(int legsId) {
-		this.legsId = legsId;
+	public void setBackLegs(int backLegsId) {
+		this.backLegsId = backLegsId;
 	}
-	public String getLegs() {
-		return legs;
+	public String getBackLegs() {
+		return backLegs;
 	}
-	public void setLegs(String legs) {
-		this.legs = legs;
+	public void setBackLegs(String backLegs) {
+		this.backLegs = backLegs;
 	}
 	public String getLegsName() {
 		return legsName;
@@ -60,6 +60,6 @@ public class Legs {
 	}
 	@Override
 	public String toString() {
-		return "Legs " + legsId + ": " + legsName + ", " + legsDesc + ", Image File: " + legsImageFile;
+		return "Legs " + backLegs;
 	}
 }

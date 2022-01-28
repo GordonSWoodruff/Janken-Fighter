@@ -13,8 +13,10 @@ public class ChiMove {
 	// Class Variables
 	@Id
 	@Column(name="c_move_id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private String cMoveId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int cMoveId;
+	@Column(name="c_move")
+	private String cMove;
 	@Column(name="c_move_key")
 	private String cMoveKey;
 	@Column(name="move_name")
@@ -30,16 +32,22 @@ public class ChiMove {
 		
 	}
 	// Getters and Setters
-	public String getMoveId() {
+	public int getcMoveId() {
 		return cMoveId;
 	}
-	public void setMoveId(String cMoveId) {
+	public void setcMoveId(int cMoveId) {
 		this.cMoveId = cMoveId;
 	}
-	public String getMoveKey() {
+	public String getcMove() {
+		return cMove;
+	}
+	public void setcMove(String cMove) {
+		this.cMove = cMove;
+	}
+	public String getcMoveKey() {
 		return cMoveKey;
 	}
-	public void setMoveKey(String cMoveKey) {
+	public void setcMoveKey(String cMoveKey) {
 		this.cMoveKey = cMoveKey;
 	}
 	public String getMoveName() {
@@ -66,7 +74,11 @@ public class ChiMove {
 	public void setMoveBuff(float moveBuff) {
 		this.moveBuff = moveBuff;
 	}
+	@Override
 	public String toString() {
-		return "";
+		return "Chi Move: " + moveName  + "(" + cMoveId + "): " + moveDesc;
+	}
+	public int toIDString() {
+		return cMoveId;
 	}
 }

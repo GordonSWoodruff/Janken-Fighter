@@ -8,15 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="torso")
-public class Torso {
+@Table(name="back_torso")
+public class BackTorso {
 	// Class Variables
 	@Id
-	@Column(name="torso_id")
+	@Column(name="back_torso_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int torsoId;
-	@Column(name="torso")
-	private String torso;
+	private int backTorsoId;
+	@Column(name="back_torso")
+	private String backTorso;
 	@Column(name="torso_name")
 	private String torsoName;
 	@Column(name="torso_desc")
@@ -24,21 +24,21 @@ public class Torso {
 	@Column(name="torso_image_file")
 	private String torsoImageFile;
 	// Basic Constructor
-	public Torso() {
+	public BackTorso() {
 		
 	}
 	// Getters and Setters
-	public int getTorsoId() {
-		return torsoId;
+	public int getBackTorsoId() {
+		return backTorsoId;
 	}
-	public void setTorsoId(int torsoId) {
-		this.torsoId = torsoId;
+	public void setBackTorsoId(int backTorsoId) {
+		this.backTorsoId = backTorsoId;
 	}
-	public String getTorso() {
-		return torso;
+	public String getBackTorso() {
+		return backTorso;
 	}
-	public void setTorso(String torso) {
-		this.torso = torso;
+	public void setTorso(String backTorso) {
+		this.backTorso = backTorso;
 	}
 	public String getTorsoName() {
 		return torsoName;
@@ -60,6 +60,6 @@ public class Torso {
 	}
 	@Override
 	public String toString() {
-		return "Torso " + torsoId + ": " + torsoName + ", " + torsoDesc + ", Image File: " + torsoImageFile;
+		return "Torso " + backTorso;
 	}
 }

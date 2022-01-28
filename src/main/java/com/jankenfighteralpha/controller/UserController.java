@@ -18,25 +18,34 @@ import com.jankenfighteralpha.service.RegistrationService;
 @RestController
 public class UserController {
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 	@Autowired
-	RegistrationService register;
+	private RegistrationService register;
 	
 	@PostMapping(value="/saveUser",
 			consumes=MediaType.APPLICATION_JSON_VALUE,
 			produces=MediaType.APPLICATION_JSON_VALUE)
 	public void submitUserDetails(@RequestBody Users user) {
-		// #1: Find the avatar by ID user.getAvatar.getHeadPart
-		// #2: Search the database for that part object
-		// #3: After finding the object, set that object to the avatar instead of user user.getAvatar.setAvatar to found object
-		// #4: Repeat for all already saved objects
 		register.registerUser(user);
 	}
 	
 	@GetMapping(value="/findUserById",
 			produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Users> findbyUserId(int userId) {
+	public ResponseEntity<Users> findById(int userId) {
 		Users user = userRepository.findById(userId);
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
+	
+	@PostMapping(value="/loginUser",
+			consumes=MediaType.APPLICATION_JSON_VALUE,
+			produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Users> checkLogin(@RequestBody Users user) {
+		Users login = userRepository.verifyLogin(user.getEmail(), user.getPassword());
+		if(login != null) {
+			return new ResponseEntity<>(login,HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+		}
+	}
+	
 }
